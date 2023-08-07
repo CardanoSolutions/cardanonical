@@ -1881,17 +1881,16 @@
 
   , "Utxo":
     { "title": "Utxo"
-    , "type": "array"
-    , "additionalItems": false
-    , "items":
-      { "type": "array"
-      , "additionalItems": false
-      , "minItems": 2
-      , "maxItems": 2
-      , "items":
-        [ { "$ref": "cardano.json#/definitions/TransactionOutputReference" }
-        , { "$ref": "cardano.json#/definitions/TransactionOutput" }
-        ]
+    , "type": "object"
+    , "propertyNames":
+      { "pattern": "^[0-9a-f]{64}#[0-9]+$" }
+    , "items": { "$ref": "cardano.json#/definitions/TransactionOutput" }
+    , "example":
+      { "09d34606abdcd0b10ebc89307cbfa0b469f9144194137b45b7a04b273961add8#687":
+        { "address": "addr1w9htvds89a78ex2uls5y969ttry9s3k9etww0staxzndwlgmzuul5"
+        , "value":
+          { "lovelace": 7620669 }
+        }
       }
     }
 
