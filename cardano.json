@@ -30,10 +30,10 @@
   , "Assets":
     { "title": "Assets"
     , "type": "object"
-    , "propertyNames": { "pattern": "^[0-9a-z]{56}$" }
+    , "propertyNames": { "pattern": "^[0-9a-f]{56}$" }
     , "additionalProperties":
       { "type": "object"
-      , "propertyNames": { "pattern": "^[0-9a-z]{0,64}$" }
+      , "propertyNames": { "pattern": "^[0-9a-f]{0,64}$" }
       , "additionalProperties": { "$ref": "cardano.json#/definitions/AssetQuantity" }
       }
     }
@@ -1908,10 +1908,10 @@
   , "Value":
     { "title": "Value"
     , "type": "object"
-    , "propertyNames": { "pattern": "^[0-9a-z]{56}$" }
+    , "propertyNames": { "pattern": "^[0-9a-f]{56}$" }
     , "additionalProperties":
       { "type": "object"
-      , "propertyNames": { "pattern": "^[0-9a-z]{0,64}$" }
+      , "propertyNames": { "pattern": "^[0-9a-f]{0,64}$" }
       , "additionalProperties": { "$ref": "cardano.json#/definitions/AssetQuantity" }
       }
     , "required": [ "ada" ]
