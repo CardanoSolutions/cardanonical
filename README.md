@@ -1,6 +1,6 @@
 # Cardanonical
 
-<img src="./assets/logo.webp" alt="Cardanonical"/>
+<img src="./docs/assets/logo.webp" alt="Cardanonical"/>
 
 A standardized JSON-schema to represent *any* Cardano-related objects. The schema covers objects found in blocks and transactions, from the Byron era onward.
 
