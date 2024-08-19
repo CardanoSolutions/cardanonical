@@ -1,0 +1,245 @@
+asyncapi: '2.4.0'
+info:
+  title: Cardanonical
+  version: '1.0.0'
+  description: |
+    <img src="assets/logo.webp" />
+  license:
+    name: CC0
+    url: https://raw.githubusercontent.com/CardanoSolutions/Cardanonical/main/LICENSE
+
+channels: {}
+
+components:
+  schemas:
+    # Top-level definitions
+    Address:
+      $ref: "/cardanonical/schema.json#/definitions/Address"
+    Assets:
+      $ref: "/cardanonical/schema.json#/definitions/Assets"
+    Block:
+      $ref: "/cardanonical/schema.json#/definitions/Block"
+    Certificate:
+      $ref: "/cardanonical/schema.json#/definitions/Certificate"
+    DelegateRepresentative:
+      $ref: "/cardanonical/schema.json#/definitions/DelegateRepresentative"
+    GovernanceAction:
+      $ref: "/cardanonical/schema.json#/definitions/GovernanceAction"
+    GovernanceProposal:
+      $ref: "/cardanonical/schema.json#/definitions/GovernanceProposal"
+    GovernanceVote:
+      $ref: "/cardanonical/schema.json#/definitions/GovernanceVote"
+    GovernanceVoter:
+      $ref: "/cardanonical/schema.json#/definitions/GovernanceVoter"
+    MetadataLabels:
+      $ref: "/cardanonical/schema.json#/definitions/MetadataLabels"
+    Language:
+      $ref: "/cardanonical/schema.json#/definitions/Language"
+    ScriptPurpose:
+      $ref: "/cardanonical/schema.json#/definitions/ScriptPurpose"
+    StakePool:
+      $ref: "/cardanonical/schema.json#/definitions/StakePool"
+    Transaction:
+      $ref: "/cardanonical/schema.json#/definitions/Transaction"
+    TransactionOutput:
+      $ref: "/cardanonical/schema.json#/definitions/TransactionOutput"
+    TransactionOutputReference:
+      $ref: "/cardanonical/schema.json#/definitions/TransactionOutputReference"
+    Utxo:
+      $ref: "/cardanonical/schema.json#/definitions/Utxo"
+    Value:
+      $ref: "/cardanonical/schema.json#/definitions/Value"
+    "Value<AdaOnly>":
+      $ref: "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
+
+    # Nested definitions
+    AddressAttributes:
+      $ref: "/cardanonical/schema.json#/definitions/AddressAttributes"
+    Anchor:
+      $ref: "/cardanonical/schema.json#/definitions/Anchor"
+    AssetQuantity:
+      $ref: "/cardanonical/schema.json#/definitions/AssetQuantity"
+    "Block<BFT>":
+      $ref: "/cardanonical/schema.json#/definitions/Block<BFT>"
+    "Block<EBB>":
+      $ref: "/cardanonical/schema.json#/definitions/Block<EBB>"
+    "Block<Praos>":
+      $ref: "/cardanonical/schema.json#/definitions/Block<Praos>"
+    BlockHeight:
+      $ref: "/cardanonical/schema.json#/definitions/BlockHeight"
+    BootstrapOperationalCertificate:
+      $ref: "/cardanonical/schema.json#/definitions/BootstrapOperationalCertificate"
+    BootstrapProtocolId:
+      $ref: "/cardanonical/schema.json#/definitions/BootstrapProtocolId"
+    BootstrapProtocolParameters:
+      $ref: "/cardanonical/schema.json#/definitions/BootstrapProtocolParameters"
+    BootstrapProtocolUpdate:
+      $ref: "/cardanonical/schema.json#/definitions/BootstrapProtocolUpdate"
+    BootstrapVote:
+      $ref: "/cardanonical/schema.json#/definitions/BootstrapVote"
+    Bound:
+      $ref: "/cardanonical/schema.json#/definitions/Bound"
+    CertifiedVrf:
+      $ref: "/cardanonical/schema.json#/definitions/CertifiedVrf"
+    ChainCode:
+      $ref: "/cardanonical/schema.json#/definitions/ChainCode"
+    Constitution:
+      $ref: "/cardanonical/schema.json#/definitions/Constitution"
+    ConstitutionalCommitteeDelegate:
+      $ref: "/cardanonical/schema.json#/definitions/ConstitutionalCommitteeDelegate"
+    ConstitutionalCommitteeMember:
+      $ref: "/cardanonical/schema.json#/definitions/ConstitutionalCommitteeMember"
+    ConstitutionalCommitteeMemberSummary:
+      $ref: "/cardanonical/schema.json#/definitions/ConstitutionalCommitteeMemberSummary"
+    CostModel:
+      $ref: "/cardanonical/schema.json#/definitions/CostModel"
+    CostModels:
+      $ref: "/cardanonical/schema.json#/definitions/CostModels"
+    CredentialOrigin:
+      $ref: "/cardanonical/schema.json#/definitions/CredentialOrigin"
+    Datum:
+      $ref: "/cardanonical/schema.json#/definitions/Datum"
+    DelegateRepresentativeVotingThresholds:
+      $ref: "/cardanonical/schema.json#/definitions/DelegateRepresentativeVotingThresholds"
+    Epoch:
+      $ref: "/cardanonical/schema.json#/definitions/Epoch"
+    EraParameters:
+      $ref: "/cardanonical/schema.json#/definitions/EraParameters"
+    EraSummary:
+      $ref: "/cardanonical/schema.json#/definitions/EraSummary"
+    ExecutionUnits:
+      $ref: "/cardanonical/schema.json#/definitions/ExecutionUnits"
+    ExtendedVerificationKey:
+      $ref: "/cardanonical/schema.json#/definitions/ExtendedVerificationKey"
+    "Genesis<Byron>":
+      $ref: "/cardanonical/schema.json#/definitions/Genesis<Byron>"
+    "Genesis<Shelley>":
+      $ref: "/cardanonical/schema.json#/definitions/Genesis<Shelley>"
+    "Genesis<Alonzo>":
+      $ref: "/cardanonical/schema.json#/definitions/Genesis<Alonzo>"
+    "Genesis<Conway>":
+      $ref: "/cardanonical/schema.json#/definitions/Genesis<Conway>"
+    GenesisDelegate:
+      $ref: "/cardanonical/schema.json#/definitions/GenesisDelegate"
+    GenesisStakePools:
+      $ref: "/cardanonical/schema.json#/definitions/GenesisStakePools"
+    GovernanceProposalReference:
+      $ref: "/cardanonical/schema.json#/definitions/GovernanceProposalReference"
+    InitialDelegates:
+      $ref: "/cardanonical/schema.json#/definitions/InitialDelegates"
+    InputSource:
+      $ref: "/cardanonical/schema.json#/definitions/InputSource"
+    KesVerificationKey:
+      $ref: "/cardanonical/schema.json#/definitions/KesVerificationKey"
+    Mandate:
+      $ref: "/cardanonical/schema.json#/definitions/Mandate"
+    Metadatum:
+      $ref: "/cardanonical/schema.json#/definitions/Metadatum"
+    Metadata:
+      $ref: "/cardanonical/schema.json#/definitions/Metadata"
+    MetadatumMap:
+      $ref: "/cardanonical/schema.json#/definitions/MetadatumMap"
+    Network:
+      $ref: "/cardanonical/schema.json#/definitions/Network"
+    NetworkMagic:
+      $ref: "/cardanonical/schema.json#/definitions/NetworkMagic"
+    Nonce:
+      $ref: "/cardanonical/schema.json#/definitions/Nonce"
+    OperationalCertificate:
+      $ref: "/cardanonical/schema.json#/definitions/OperationalCertificate"
+    PolicyId:
+      $ref: "/cardanonical/schema.json#/definitions/PolicyId"
+    ProposedProtocolParameters:
+      $ref: "/cardanonical/schema.json#/definitions/ProposedProtocolParameters"
+    ProtocolParameters:
+      $ref: "/cardanonical/schema.json#/definitions/ProtocolParameters"
+    ProtocolVersion:
+      $ref: "/cardanonical/schema.json#/definitions/ProtocolVersion"
+    Redeemer:
+      $ref: "/cardanonical/schema.json#/definitions/Redeemer"
+    RedeemerData:
+      $ref: "/cardanonical/schema.json#/definitions/RedeemerData"
+    RedeemerPointer:
+      $ref: "/cardanonical/schema.json#/definitions/RedeemerPointer"
+    RelativeTime:
+      $ref: "/cardanonical/schema.json#/definitions/RelativeTime"
+    Relay:
+      $ref: "/cardanonical/schema.json#/definitions/Relay"
+    RewardAccount:
+      $ref: "/cardanonical/schema.json#/definitions/RewardAccount"
+    RewardTransfer:
+      $ref: "/cardanonical/schema.json#/definitions/RewardTransfer"
+    SafeZone:
+      $ref: "/cardanonical/schema.json#/definitions/SafeZone"
+    Script:
+      $ref: "/cardanonical/schema.json#/definitions/Script"
+    "Script<Native>":
+      $ref: "/cardanonical/schema.json#/definitions/Script<Native>"
+    ScriptExecutionPrices:
+      $ref: "/cardanonical/schema.json#/definitions/ScriptExecutionPrices"
+    Signatory:
+      $ref: "/cardanonical/schema.json#/definitions/Signatory"
+    Signature:
+      $ref: "/cardanonical/schema.json#/definitions/Signature"
+    Slot:
+      $ref: "/cardanonical/schema.json#/definitions/Slot"
+    SlotLength:
+      $ref: "/cardanonical/schema.json#/definitions/SlotLength"
+    SoftwareVersion:
+      $ref: "/cardanonical/schema.json#/definitions/SoftwareVersion"
+    StakeAddress:
+      $ref: "/cardanonical/schema.json#/definitions/StakeAddress"
+    StakePoolId:
+      $ref: "/cardanonical/schema.json#/definitions/StakePoolId"
+    StakePoolVotingThresholds:
+      $ref: "/cardanonical/schema.json#/definitions/StakePoolVotingThresholds"
+    Tip:
+      $ref: "/cardanonical/schema.json#/definitions/Tip"
+    TransactionId:
+      $ref: "/cardanonical/schema.json#/definitions/TransactionId"
+    ValidityInterval:
+      $ref: "/cardanonical/schema.json#/definitions/ValidityInterval"
+    "Value<Delta>":
+      $ref: "/cardanonical/schema.json#/definitions/Value<Delta>"
+    VerificationKey:
+      $ref: "/cardanonical/schema.json#/definitions/VerificationKey"
+    VotingPeriod:
+      $ref: "/cardanonical/schema.json#/definitions/VotingPeriod"
+    VrfOutput:
+      $ref: "/cardanonical/schema.json#/definitions/VrfOutput"
+    VrfProof:
+      $ref: "/cardanonical/schema.json#/definitions/VrfProof"
+    Withdrawals:
+      $ref: "/cardanonical/schema.json#/definitions/Withdrawals"
+
+    # Primitives
+    "Digest<Any>":
+      $ref: "/cardanonical/schema.json#/definitions/Digest<Any>"
+    "Digest<Blake2b_224>":
+      $ref: "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
+    "Digest<Blake2b_256>":
+      $ref: "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>"
+    Era:
+      $ref: "/cardanonical/schema.json#/definitions/Era"
+    EraWithGenesis:
+      $ref: "/cardanonical/schema.json#/definitions/EraWithGenesis"
+    Int64:
+      $ref: "/cardanonical/schema.json#/definitions/Int64"
+    NumberOfBytes:
+      $ref: "/cardanonical/schema.json#/definitions/NumberOfBytes"
+    Null:
+      $ref: "/cardanonical/schema.json#/definitions/Null"
+    Origin:
+      $ref: "/cardanonical/schema.json#/definitions/Origin"
+    Ratio:
+      $ref: "/cardanonical/schema.json#/definitions/Ratio"
+    UInt16:
+      $ref: "/cardanonical/schema.json#/definitions/UInt16"
+    UInt32:
+      $ref: "/cardanonical/schema.json#/definitions/UInt32"
+    UInt64:
+      $ref: "/cardanonical/schema.json#/definitions/UInt64"
+    UInt8:
+      $ref: "/cardanonical/schema.json#/definitions/UInt8"
+    UtcTime:
+      $ref: "/cardanonical/schema.json#/definitions/UtcTime"

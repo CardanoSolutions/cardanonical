@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cardanonical - JSON Schema</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Cardanonical - Canonical JSON Schema">
+  <meta property="og:site_name" content="Cardanonical">
+  <meta property="og:url" content="https://cardanosolutions.github.io/cardanonical">
+  <meta property="og:description" content="A standardize JSON-schema to represent any Cardano-related objects. The schema covers objects found in blocks and transactions, from the Byron era onward.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cardanosolutions.github.io/cardanonical/assets/logo.webp">
+  <script src="assets/asyncapi-1.0.0-next.47.min.js"></script>
+  <link rel="stylesheet" href="assets/default.min.css">
+  <style>
+  body {
+    margin: 0;
+    margin-top: -1rem;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+  #introduction > div.text-4xl,
+  #introduction > ul.leading-normal {
+    display: none;
+  }
+  #introduction {
+    padding: 0;
+  }
+  section.aui-root > div > div.panel--center {
+    padding: 0;
+  }
+  </style>
+</head>
+<body>
+  <div id="asyncapi"></div>
+  <script>
+    AsyncApiStandalone.render({
+      schema: {
+        url: 'specification.yaml',
+      },
+      config: {
+        show: {
+          messages: false
+        },
+      },
+    }, document.getElementById('asyncapi'));
+  </script>
+</body>
+</html>

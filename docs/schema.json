@@ -27,7 +27,7 @@
     , "required": ["hash","url"]
     , "properties":
       { "hash":
-        { "$ref": "#/definitions/Digest<Any>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Digest<Any>"
         }
       , "url":
         { "type": "string"
@@ -49,7 +49,7 @@
     , "additionalProperties":
       { "type": "object"
       , "propertyNames": { "pattern": "^[0-9a-f]{0,64}$" }
-      , "additionalProperties": { "$ref": "#/definitions/AssetQuantity" }
+      , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/AssetQuantity" }
       }
     }
 
@@ -69,9 +69,9 @@
         { "type": "string"
         , "enum": [ "byron" ]
         }
-      , "id": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
-      , "ancestor": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
-      , "height": { "$ref": "#/definitions/BlockHeight" }
+      , "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
+      , "ancestor": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
+      , "height": { "$ref": "/cardanonical/schema.json#/definitions/BlockHeight" }
       }
     }
 
@@ -92,28 +92,28 @@
         { "type": "string"
         , "enum": [ "byron" ]
         }
-      , "id": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
-      , "ancestor": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
-      , "height": { "$ref": "#/definitions/BlockHeight" }
-      , "slot": { "$ref": "#/definitions/Slot" }
-      , "size": { "$ref": "#/definitions/NumberOfBytes" }
+      , "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
+      , "ancestor": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
+      , "height": { "$ref": "/cardanonical/schema.json#/definitions/BlockHeight" }
+      , "slot": { "$ref": "/cardanonical/schema.json#/definitions/Slot" }
+      , "size": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
       , "transactions":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Transaction" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Transaction" }
         }
       , "operationalCertificates":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/BootstrapOperationalCertificate"}
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/BootstrapOperationalCertificate"}
         }
       , "protocol":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "id", "version", "software" ]
         , "properties":
-          { "id": { "$ref": "#/definitions/BootstrapProtocolId" }
-          , "version": { "$ref": "#/definitions/ProtocolVersion" }
-          , "software": { "$ref": "#/definitions/SoftwareVersion" }
-          , "update": { "$ref": "#/definitions/BootstrapProtocolUpdate" }
+          { "id": { "$ref": "/cardanonical/schema.json#/definitions/BootstrapProtocolId" }
+          , "version": { "$ref": "/cardanonical/schema.json#/definitions/ProtocolVersion" }
+          , "software": { "$ref": "/cardanonical/schema.json#/definitions/SoftwareVersion" }
+          , "update": { "$ref": "/cardanonical/schema.json#/definitions/BootstrapProtocolUpdate" }
           }
         }
       , "issuer":
@@ -121,7 +121,7 @@
         , "additionalProperties": false
         , "required": [ "verificationKey" ]
         , "properties":
-          { "verificationKey": { "$ref": "#/definitions/ExtendedVerificationKey" }
+          { "verificationKey": { "$ref": "/cardanonical/schema.json#/definitions/ExtendedVerificationKey" }
           }
         }
       , "delegate":
@@ -129,7 +129,7 @@
         , "additionalProperties": false
         , "required": [ "verificationKey" ]
         , "properties":
-          { "verificationKey": { "$ref": "#/definitions/ExtendedVerificationKey" }
+          { "verificationKey": { "$ref": "/cardanonical/schema.json#/definitions/ExtendedVerificationKey" }
           }
         }
       }
@@ -152,27 +152,27 @@
         { "type": "string"
         , "enum": [ "shelley", "allegra", "mary", "alonzo", "babbage", "conway" ]
         }
-      , "id": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
+      , "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
       , "ancestor":
         { "oneOf":
-          [ { "$ref": "#/definitions/Digest<Blake2b, 256>" }
+          [ { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
           , { "title": "GenesisHash", "type": "string", "enum": [ "genesis" ] }
           ]
         }
-      , "nonce": { "$ref": "#/definitions/CertifiedVrf" }
-      , "height": { "$ref": "#/definitions/BlockHeight" }
-      , "size": { "$ref": "#/definitions/NumberOfBytes" }
-      , "slot": { "$ref": "#/definitions/Slot" }
+      , "nonce": { "$ref": "/cardanonical/schema.json#/definitions/CertifiedVrf" }
+      , "height": { "$ref": "/cardanonical/schema.json#/definitions/BlockHeight" }
+      , "size": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "slot": { "$ref": "/cardanonical/schema.json#/definitions/Slot" }
       , "transactions":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Transaction" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Transaction" }
         }
       , "protocol":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "version" ]
         , "properties":
-          { "version": { "$ref": "#/definitions/ProtocolVersion" }
+          { "version": { "$ref": "/cardanonical/schema.json#/definitions/ProtocolVersion" }
           }
         }
       , "issuer":
@@ -180,10 +180,10 @@
         , "additionalProperties": false
         , "required": [ "verificationKey", "vrfVerificationKey", "operationalCertificate", "leaderValue" ]
         , "properties":
-          { "verificationKey": { "$ref": "#/definitions/VerificationKey" }
-          , "vrfVerificationKey": { "$ref": "#/definitions/VerificationKey" }
-          , "operationalCertificate": { "$ref": "#/definitions/OperationalCertificate" }
-          , "leaderValue": { "$ref": "#/definitions/CertifiedVrf" }
+          { "verificationKey": { "$ref": "/cardanonical/schema.json#/definitions/VerificationKey" }
+          , "vrfVerificationKey": { "$ref": "/cardanonical/schema.json#/definitions/VerificationKey" }
+          , "operationalCertificate": { "$ref": "/cardanonical/schema.json#/definitions/OperationalCertificate" }
+          , "leaderValue": { "$ref": "/cardanonical/schema.json#/definitions/CertifiedVrf" }
           }
         }
       }
@@ -192,9 +192,9 @@
   , "Block":
     { "title": "Block"
     , "oneOf":
-      [ { "$ref": "#/definitions/Block<EBB>" }
-      , { "$ref": "#/definitions/Block<BFT>" }
-      , { "$ref": "#/definitions/Block<Praos>" }
+      [ { "$ref": "/cardanonical/schema.json#/definitions/Block<EBB>" }
+      , { "$ref": "/cardanonical/schema.json#/definitions/Block<BFT>" }
+      , { "$ref": "/cardanonical/schema.json#/definitions/Block<Praos>" }
       ]
     }
 
@@ -218,13 +218,13 @@
         , "required": [ "version", "software", "parameters", "metadata" ]
         , "properties":
           { "version":
-            { "$ref": "#/definitions/ProtocolVersion"
+            { "$ref": "/cardanonical/schema.json#/definitions/ProtocolVersion"
             }
           , "software":
-            { "$ref": "#/definitions/SoftwareVersion"
+            { "$ref": "/cardanonical/schema.json#/definitions/SoftwareVersion"
             }
           , "parameters":
-            { "$ref": "#/definitions/BootstrapProtocolParameters"
+            { "$ref": "/cardanonical/schema.json#/definitions/BootstrapProtocolParameters"
             }
           , "metadata":
             { "type": "object"
@@ -234,7 +234,7 @@
         }
       , "votes":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/BootstrapVote" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/BootstrapVote" }
         }
       }
     }
@@ -251,7 +251,7 @@
         , "additionalProperties": false
         , "required": [ "verificationKey" ]
         , "properties":
-          { "verificationKey": { "$ref": "#/definitions/VerificationKey" }
+          { "verificationKey": { "$ref": "/cardanonical/schema.json#/definitions/VerificationKey" }
           }
         }
       , "delegate":
@@ -259,7 +259,7 @@
         , "additionalProperties": false
         , "required": [ "verificationKey" ]
         , "properties":
-          { "verificationKey": { "$ref": "#/definitions/VerificationKey" }
+          { "verificationKey": { "$ref": "/cardanonical/schema.json#/definitions/VerificationKey" }
           }
         }
       }
@@ -280,23 +280,23 @@
     , "type": "object"
     , "additionalProperties": false
     , "properties":
-      { "heavyDelegationThreshold": { "$ref": "#/definitions/Ratio" }
-      , "maxBlockBodySize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxBlockHeaderSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxUpdateProposalSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxTransactionSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "multiPartyComputationThreshold": { "$ref": "#/definitions/Ratio" }
-      , "scriptVersion": { "$ref": "#/definitions/UInt64" }
-      , "slotDuration": { "$ref": "#/definitions/UInt64" }
-      , "unlockStakeEpoch": { "$ref": "#/definitions/UInt64" }
-      , "updateProposalThreshold": { "$ref": "#/definitions/Ratio" }
-      , "updateProposalTimeToLive": { "$ref": "#/definitions/UInt64" }
-      , "updateVoteThreshold": { "$ref": "#/definitions/Ratio" }
-      , "softForkInitThreshold": { "$ref": "#/definitions/Ratio" }
-      , "softForkMinThreshold": { "$ref": "#/definitions/Ratio" }
-      , "softForkDecrementThreshold": { "$ref": "#/definitions/Ratio" }
-      , "minFeeCoefficient": { "$ref": "#/definitions/UInt64" }
-      , "minFeeConstant": { "$ref": "#/definitions/Value<AdaOnly>" }
+      { "heavyDelegationThreshold": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "maxBlockBodySize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxBlockHeaderSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxUpdateProposalSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxTransactionSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "multiPartyComputationThreshold": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "scriptVersion": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "slotDuration": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "unlockStakeEpoch": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "updateProposalThreshold": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "updateProposalTimeToLive": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "updateVoteThreshold": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "softForkInitThreshold": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "softForkMinThreshold": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "softForkDecrementThreshold": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "minFeeCoefficient": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "minFeeConstant": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
       }
     }
 
@@ -311,7 +311,7 @@
         , "additionalProperties": false
         , "required": [ "verificationKey" ]
         , "properties":
-          { "verificationKey": { "$ref": "#/definitions/VerificationKey" }
+          { "verificationKey": { "$ref": "/cardanonical/schema.json#/definitions/VerificationKey" }
           }
         }
       , "proposal":
@@ -319,7 +319,7 @@
         , "additionalProperties": false
         , "required": [ "id" ]
         , "properties":
-          { "id": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
+          { "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
           }
         }
       }
@@ -332,9 +332,9 @@
     , "additionalProperties": false
     , "required": ["time", "slot", "epoch"]
     , "properties":
-      { "time": { "$ref": "#/definitions/RelativeTime" }
-      , "slot": { "$ref": "#/definitions/Slot" }
-      , "epoch": { "$ref": "#/definitions/Epoch" }
+      { "time": { "$ref": "/cardanonical/schema.json#/definitions/RelativeTime" }
+      , "slot": { "$ref": "/cardanonical/schema.json#/definitions/Slot" }
+      , "epoch": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
       }
     }
 
@@ -352,10 +352,10 @@
             , "enum": [ "stakeDelegation" ]
             }
           , "from":
-            { "$ref": "#/definitions/CredentialOrigin"
+            { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
             }
           , "credential":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           , "stakePool":
             { "type": "object"
@@ -363,12 +363,12 @@
             , "required": [ "id" ]
             , "properties":
               { "id":
-                { "$ref": "#/definitions/StakePoolId"
+                { "$ref": "/cardanonical/schema.json#/definitions/StakePoolId"
                 }
               }
             }
           , "delegateRepresentative":
-            { "$ref": "#/definitions/DelegateRepresentative"
+            { "$ref": "/cardanonical/schema.json#/definitions/DelegateRepresentative"
             }
           }
         }
@@ -383,13 +383,13 @@
             , "enum": [ "stakeCredentialRegistration" ]
             }
           , "from":
-            { "$ref": "#/definitions/CredentialOrigin"
+            { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
             }
           , "credential":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           , "deposit":
-            { "$ref": "#/definitions/Value<AdaOnly>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
             }
           }
         }
@@ -404,13 +404,13 @@
             , "enum": [ "stakeCredentialDeregistration" ]
             }
           , "from":
-            { "$ref": "#/definitions/CredentialOrigin"
+            { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
             }
           , "credential":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           , "deposit":
-            { "$ref": "#/definitions/Value<AdaOnly>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
             }
           }
         }
@@ -425,7 +425,7 @@
             , "enum": [ "stakePoolRegistration" ]
             }
           , "stakePool":
-            { "$ref": "#/definitions/StakePool"
+            { "$ref": "/cardanonical/schema.json#/definitions/StakePool"
             }
           }
         }
@@ -444,8 +444,8 @@
             , "additionalProperties": false
             , "required": [ "id", "retirementEpoch" ]
             , "properties":
-              { "retirementEpoch": { "$ref": "#/definitions/Epoch" }
-              , "id": { "$ref": "#/definitions/StakePoolId" }
+              { "retirementEpoch": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
+              , "id": { "$ref": "/cardanonical/schema.json#/definitions/StakePoolId" }
               }
             }
           }
@@ -460,7 +460,7 @@
             , "enum": [ "genesisDelegation" ]
             }
           , "delegate":
-            { "$ref": "#/definitions/GenesisDelegate"
+            { "$ref": "/cardanonical/schema.json#/definitions/GenesisDelegate"
             }
           , "issuer":
             { "type": "object"
@@ -468,7 +468,7 @@
             , "required": [ "id" ]
             , "properties":
               { "id":
-                { "$ref": "#/definitions/Digest<Blake2b, 224>"
+                { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
                 }
               }
             }
@@ -489,12 +489,12 @@
             , "additionalProperties": false
             , "required": [ "id", "from" ]
             , "properties":
-              { "id": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
-              , "from": { "$ref": "#/definitions/CredentialOrigin" }
+              { "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
+              , "from": { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin" }
               }
             }
           , "delegate":
-            { "$ref": "#/definitions/ConstitutionalCommitteeDelegate"
+            { "$ref": "/cardanonical/schema.json#/definitions/ConstitutionalCommitteeDelegate"
             }
           }
         }
@@ -513,12 +513,12 @@
             , "additionalProperties": false
             , "required": [ "id", "from" ]
             , "properties":
-              { "id": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
-              , "from": { "$ref": "#/definitions/CredentialOrigin" }
+              { "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
+              , "from": { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin" }
               }
             }
           , "metadata":
-            { "$ref": "#/definitions/Anchor"
+            { "$ref": "/cardanonical/schema.json#/definitions/Anchor"
             }
           }
         }
@@ -533,13 +533,13 @@
             , "enum": [ "delegateRepresentativeRegistration" ]
             }
           , "delegateRepresentative":
-            { "$ref": "#/definitions/DelegateRepresentative"
+            { "$ref": "/cardanonical/schema.json#/definitions/DelegateRepresentative"
             }
           , "deposit":
-            { "$ref": "#/definitions/Value<AdaOnly>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
             }
           , "metadata":
-            { "$ref": "#/definitions/Anchor"
+            { "$ref": "/cardanonical/schema.json#/definitions/Anchor"
             }
           }
         }
@@ -554,12 +554,12 @@
             , "enum": [ "delegateRepresentativeUpdate" ]
             }
           , "delegateRepresentative":
-            { "$ref": "#/definitions/DelegateRepresentative"
+            { "$ref": "/cardanonical/schema.json#/definitions/DelegateRepresentative"
             }
           , "metadata":
             { "oneOf":
               [ { "type": "null", "title": "None" }
-              , { "$ref": "#/definitions/Anchor" }
+              , { "$ref": "/cardanonical/schema.json#/definitions/Anchor" }
               ]
             }
           }
@@ -575,10 +575,10 @@
             , "enum": [ "delegateRepresentativeRetirement" ]
             }
           , "delegateRepresentative":
-            { "$ref": "#/definitions/DelegateRepresentative"
+            { "$ref": "/cardanonical/schema.json#/definitions/DelegateRepresentative"
             }
           , "deposit":
-            { "$ref": "#/definitions/Value<AdaOnly>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
             }
           }
         }
@@ -590,8 +590,8 @@
     , "type": "object"
     , "additionalProperties": false
     , "properties":
-      { "proof": { "$ref": "#/definitions/VrfProof" }
-      , "output": { "$ref": "#/definitions/VrfOutput" }
+      { "proof": { "$ref": "/cardanonical/schema.json#/definitions/VrfProof" }
+      , "output": { "$ref": "/cardanonical/schema.json#/definitions/VrfOutput" }
       }
     }
 
@@ -610,20 +610,20 @@
     , "properties":
       { "guardrails":
         { "oneOf":
-          [ { "$ref": "#/definitions/Null" }
+          [ { "$ref": "/cardanonical/schema.json#/definitions/Null" }
           , { "type": "object"
             , "additionalProperties": false
             , "required": [ "hash" ]
             , "properties":
               { "hash":
-                { "$ref": "#/definitions/Digest<Blake2b, 224>"
+                { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
                 }
               }
             }
           ]
         }
       , "metadata":
-        { "$ref": "#/definitions/Anchor"
+        { "$ref": "/cardanonical/schema.json#/definitions/Anchor"
         }
       }
     }
@@ -636,10 +636,10 @@
     , "required": [ "id", "from", "delegate", "status" ]
     , "properties":
       { "id":
-        { "$ref": "#/definitions/Digest<Blake2b, 224>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
         }
       , "from":
-        { "$ref": "#/definitions/CredentialOrigin"
+        { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
         }
       , "status":
         { "type": "string"
@@ -647,10 +647,10 @@
         , "enum": [ "active", "expired", "unrecognized" ]
         }
       , "delegate":
-        { "$ref": "#/definitions/ConstitutionalCommitteeDelegate"
+        { "$ref": "/cardanonical/schema.json#/definitions/ConstitutionalCommitteeDelegate"
         }
       , "mandate":
-        { "$ref": "#/definitions/Mandate"
+        { "$ref": "/cardanonical/schema.json#/definitions/Mandate"
         }
       , "next":
         { "oneOf":
@@ -693,7 +693,7 @@
                 , "enum": [ "adjustingMandate" ]
                 }
               , "mandate":
-                { "$ref": "#/definitions/Mandate"
+                { "$ref": "/cardanonical/schema.json#/definitions/Mandate"
                 }
               }
             }
@@ -714,10 +714,10 @@
             , "enum": [ "authorized" ]
             }
           , "id":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           , "from":
-            { "$ref": "#/definitions/CredentialOrigin"
+            { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
             }
           }
         }
@@ -730,7 +730,7 @@
             , "enum": [ "resigned" ]
             }
           , "metadata":
-            { "$ref": "#/definitions/Anchor"
+            { "$ref": "/cardanonical/schema.json#/definitions/Anchor"
             }
           }
         }
@@ -754,13 +754,13 @@
     , "required": [ "id", "from" ]
     , "properties":
       { "id":
-        { "$ref": "#/definitions/Digest<Blake2b, 224>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
         }
       , "from":
-        { "$ref": "#/definitions/CredentialOrigin"
+        { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
         }
       , "mandate":
-        { "$ref": "#/definitions/Mandate"
+        { "$ref": "/cardanonical/schema.json#/definitions/Mandate"
         }
       }
     }
@@ -768,8 +768,8 @@
   , "CostModels":
     { "title": "CostModels"
     , "type": "object"
-    , "additionalProperties": { "$ref": "#/definitions/CostModel" }
-    , "propertyNames": { "$ref": "#/definitions/Language" }
+    , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/CostModel" }
+    , "propertyNames": { "$ref": "/cardanonical/schema.json#/definitions/Language" }
     , "examples":
       [ { "plutus:v1": [ 14, 123 ]
         , "plutus:v2": [ 14, 42, 131 ]
@@ -780,7 +780,7 @@
   , "CostModel":
     { "title": "CostModel"
     , "type": "array"
-    , "items": { "$ref": "#/definitions/Int64" }
+    , "items": { "$ref": "/cardanonical/schema.json#/definitions/Int64" }
     }
 
   , "CredentialOrigin":
@@ -811,30 +811,30 @@
       , "treasuryWithdrawals"
       ]
     , "properties":
-      { "noConfidence": { "$ref": "#/definitions/Ratio" }
-      , "constitution": { "$ref": "#/definitions/Ratio" }
+      { "noConfidence": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "constitution": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
       , "constitutionalCommittee":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "default", "stateOfNoConfidence" ]
         , "properties":
-          { "default": { "$ref": "#/definitions/Ratio" }
-          , "stateOfNoConfidence": { "$ref": "#/definitions/Ratio" }
+          { "default": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+          , "stateOfNoConfidence": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
           }
         }
-      , "hardForkInitiation": { "$ref": "#/definitions/Ratio" }
+      , "hardForkInitiation": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
       , "protocolParametersUpdate":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "network", "economic", "technical", "governance" ]
         , "properties":
-          { "network": { "$ref": "#/definitions/Ratio" }
-          , "economic": { "$ref": "#/definitions/Ratio" }
-          , "technical": { "$ref": "#/definitions/Ratio" }
-          , "governance": { "$ref": "#/definitions/Ratio" }
+          { "network": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+          , "economic": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+          , "technical": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+          , "governance": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
           }
         }
-      , "treasuryWithdrawals": { "$ref": "#/definitions/Ratio" }
+      , "treasuryWithdrawals": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
       }
     }
 
@@ -869,10 +869,10 @@
         , "required": [ "id", "from", "type" ]
         , "properties":
           { "id":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           , "from":
-            { "$ref": "#/definitions/CredentialOrigin"
+            { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
             }
           , "type":
             { "type": "string"
@@ -946,11 +946,11 @@
     , "additionalProperties": false
     , "required": [ "epochLength", "slotLength", "safeZone" ]
     , "properties":
-      { "epochLength": { "$ref": "#/definitions/Epoch" }
-      , "slotLength": { "$ref": "#/definitions/SlotLength" }
+      { "epochLength": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
+      , "slotLength": { "$ref": "/cardanonical/schema.json#/definitions/SlotLength" }
       , "safeZone":
         { "oneOf":
-          [ { "$ref": "#/definitions/SafeZone" }
+          [ { "$ref": "/cardanonical/schema.json#/definitions/SafeZone" }
           , { "type": "null" }
           ]
         }
@@ -964,9 +964,9 @@
     , "additionalProperties": false
     , "required": [ "start", "parameters" ]
     , "properties":
-      { "start": { "$ref": "#/definitions/Bound" }
-      , "end": { "$ref": "#/definitions/Bound" }
-      , "parameters": { "$ref": "#/definitions/EraParameters" }
+      { "start": { "$ref": "/cardanonical/schema.json#/definitions/Bound" }
+      , "end": { "$ref": "/cardanonical/schema.json#/definitions/Bound" }
+      , "parameters": { "$ref": "/cardanonical/schema.json#/definitions/EraParameters" }
       }
     }
 
@@ -976,8 +976,8 @@
     , "additionalProperties": false
     , "required": [ "memory", "cpu" ]
     , "properties":
-      { "memory": { "$ref": "#/definitions/UInt64" }
-      , "cpu": { "$ref": "#/definitions/UInt64" }
+      { "memory": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "cpu": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
       }
     }
 
@@ -1004,27 +1004,27 @@
         }
       , "genesisKeyHashes":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
         }
       , "genesisDelegations":
         { "type": "object"
-        , "propertyNames": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
-        , "additionalProperties": { "$ref": "#/definitions/BootstrapOperationalCertificate" }
+        , "propertyNames": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
+        , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/BootstrapOperationalCertificate" }
         }
-      , "startTime": { "$ref": "#/definitions/UtcTime" }
+      , "startTime": { "$ref": "/cardanonical/schema.json#/definitions/UtcTime" }
       , "initialFunds":
         { "type": "object"
-        , "propertyNames": { "$ref": "#/definitions/Address" }
-        , "additionalProperties": { "$ref": "#/definitions/Value<AdaOnly>" }
+        , "propertyNames": { "$ref": "/cardanonical/schema.json#/definitions/Address" }
+        , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
         }
       , "initialVouchers":
         { "type": "object"
-        , "propertyNames": { "$ref": "#/definitions/VerificationKey" }
-        , "additionalProperties": { "$ref": "#/definitions/Value<AdaOnly>" }
+        , "propertyNames": { "$ref": "/cardanonical/schema.json#/definitions/VerificationKey" }
+        , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
         }
-      , "securityParameter": { "$ref": "#/definitions/UInt64" }
-      , "networkMagic": { "$ref": "#/definitions/NetworkMagic" }
-      , "updatableParameters": { "$ref": "#/definitions/ProtocolParameters" }
+      , "securityParameter": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "networkMagic": { "$ref": "/cardanonical/schema.json#/definitions/NetworkMagic" }
+      , "updatableParameters": { "$ref": "/cardanonical/schema.json#/definitions/ProtocolParameters" }
       }
     }
 
@@ -1056,26 +1056,26 @@
         { "type": "string"
         , "enum": [ "shelley" ]
         }
-      , "startTime": { "$ref": "#/definitions/UtcTime" }
-      , "networkMagic": { "$ref": "#/definitions/NetworkMagic" }
-      , "network": { "$ref": "#/definitions/Network" }
-      , "activeSlotsCoefficient": { "$ref": "#/definitions/Ratio" }
-      , "securityParameter": { "$ref": "#/definitions/UInt64" }
-      , "epochLength": { "$ref": "#/definitions/Epoch" }
-      , "slotsPerKesPeriod": { "$ref": "#/definitions/UInt64" }
-      , "maxKesEvolutions": { "$ref": "#/definitions/UInt64" }
-      , "slotLength": { "$ref": "#/definitions/SlotLength" }
-      , "updateQuorum": { "$ref": "#/definitions/UInt64" }
-      , "maxLovelaceSupply": { "$ref": "#/definitions/UInt64" }
-      , "initialParameters": { "$ref": "#/definitions/ProtocolParameters" }
-      , "initialDelegates": { "$ref": "#/definitions/InitialDelegates" }
+      , "startTime": { "$ref": "/cardanonical/schema.json#/definitions/UtcTime" }
+      , "networkMagic": { "$ref": "/cardanonical/schema.json#/definitions/NetworkMagic" }
+      , "network": { "$ref": "/cardanonical/schema.json#/definitions/Network" }
+      , "activeSlotsCoefficient": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "securityParameter": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "epochLength": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
+      , "slotsPerKesPeriod": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "maxKesEvolutions": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "slotLength": { "$ref": "/cardanonical/schema.json#/definitions/SlotLength" }
+      , "updateQuorum": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "maxLovelaceSupply": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "initialParameters": { "$ref": "/cardanonical/schema.json#/definitions/ProtocolParameters" }
+      , "initialDelegates": { "$ref": "/cardanonical/schema.json#/definitions/InitialDelegates" }
       , "initialFunds":
         { "type": "object"
         , "title": "InitialFunds"
-        , "propertyNames": { "$ref": "#/definitions/Address" }
-        , "additionalProperties": { "$ref": "#/definitions/Value<AdaOnly>" }
+        , "propertyNames": { "$ref": "/cardanonical/schema.json#/definitions/Address" }
+        , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
         }
-      , "initialStakePools": { "$ref": "#/definitions/GenesisStakePools" }
+      , "initialStakePools": { "$ref": "/cardanonical/schema.json#/definitions/GenesisStakePools" }
       }
     }
 
@@ -1107,14 +1107,14 @@
           , "scriptExecutionPrices"
           ]
         , "properties":
-          { "minUtxoDepositCoefficient": { "$ref": "#/definitions/UInt64" }
-          , "collateralPercentage": { "$ref": "#/definitions/UInt64" }
-          , "plutusCostModels": { "$ref": "#/definitions/CostModels" }
-          , "maxCollateralInputs": { "$ref": "#/definitions/UInt64" }
-          , "maxExecutionUnitsPerBlock": { "$ref": "#/definitions/ExecutionUnits" }
-          , "maxExecutionUnitsPerTransaction": { "$ref": "#/definitions/ExecutionUnits" }
-          , "maxValueSize": { "$ref": "#/definitions/NumberOfBytes" }
-          , "scriptExecutionPrices": { "$ref": "#/definitions/ScriptExecutionPrices" }
+          { "minUtxoDepositCoefficient": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+          , "collateralPercentage": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+          , "plutusCostModels": { "$ref": "/cardanonical/schema.json#/definitions/CostModels" }
+          , "maxCollateralInputs": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+          , "maxExecutionUnitsPerBlock": { "$ref": "/cardanonical/schema.json#/definitions/ExecutionUnits" }
+          , "maxExecutionUnitsPerTransaction": { "$ref": "/cardanonical/schema.json#/definitions/ExecutionUnits" }
+          , "maxValueSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+          , "scriptExecutionPrices": { "$ref": "/cardanonical/schema.json#/definitions/ScriptExecutionPrices" }
           }
         }
       }
@@ -1137,7 +1137,7 @@
         , "enum": [ "conway" ]
         }
       , "constitution":
-        { "$ref": "#/definitions/Constitution"
+        { "$ref": "/cardanonical/schema.json#/definitions/Constitution"
         }
       , "constitutionalCommittee":
         { "type": "object"
@@ -1146,10 +1146,10 @@
         , "properties":
           { "members":
             { "type": "array"
-            , "items": { "$ref": "#/definitions/ConstitutionalCommitteeMemberSummary" }
+            , "items": { "$ref": "/cardanonical/schema.json#/definitions/ConstitutionalCommitteeMemberSummary" }
             }
           , "quorum":
-            { "$ref": "#/definitions/Ratio"
+            { "$ref": "/cardanonical/schema.json#/definitions/Ratio"
             }
           }
         }
@@ -1167,14 +1167,14 @@
           , "delegateRepresentativeMaxIdleTime"
           ]
         , "properties":
-          { "stakePoolVotingThresholds": { "$ref": "#/definitions/StakePoolVotingThresholds" }
-          , "constitutionalCommitteeMinSize": { "$ref": "#/definitions/UInt64" }
-          , "constitutionalCommitteeMaxTermLength": { "$ref": "#/definitions/UInt64" }
-          , "governanceActionLifetime": { "$ref": "#/definitions/Epoch" }
-          , "governanceActionDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-          , "delegateRepresentativeVotingThresholds": { "$ref": "#/definitions/DelegateRepresentativeVotingThresholds" }
-          , "delegateRepresentativeDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-          , "delegateRepresentativeMaxIdleTime": { "$ref": "#/definitions/Epoch" }
+          { "stakePoolVotingThresholds": { "$ref": "/cardanonical/schema.json#/definitions/StakePoolVotingThresholds" }
+          , "constitutionalCommitteeMinSize": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+          , "constitutionalCommitteeMaxTermLength": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+          , "governanceActionLifetime": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
+          , "governanceActionDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+          , "delegateRepresentativeVotingThresholds": { "$ref": "/cardanonical/schema.json#/definitions/DelegateRepresentativeVotingThresholds" }
+          , "delegateRepresentativeDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+          , "delegateRepresentativeMaxIdleTime": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
           }
         }
       }
@@ -1190,8 +1190,8 @@
       , "id"
       ]
     , "properties":
-      { "id": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
-      , "vrfVerificationKeyHash": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
+      { "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
+      , "vrfVerificationKeyHash": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
       }
     }
 
@@ -1207,13 +1207,13 @@
     , "properties":
       { "stakePools":
         { "type": "object"
-        , "propertyNames": { "$ref": "#/definitions/StakePoolId" }
-        , "additionalProperties": { "$ref": "#/definitions/StakePool" }
+        , "propertyNames": { "$ref": "/cardanonical/schema.json#/definitions/StakePoolId" }
+        , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/StakePool" }
         }
       , "delegators":
         { "type": "object"
-        , "propertyNames": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
-        , "additionalProperties": { "$ref": "#/definitions/StakePoolId" }
+        , "propertyNames": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
+        , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/StakePoolId" }
         }
       }
     }
@@ -1231,19 +1231,19 @@
             , "enum": [ "protocolParametersUpdate" ]
             }
           , "ancestor":
-            { "$ref": "#/definitions/GovernanceProposalReference"
+            { "$ref": "/cardanonical/schema.json#/definitions/GovernanceProposalReference"
             }
           , "parameters":
-            { "$ref": "#/definitions/ProposedProtocolParameters"
+            { "$ref": "/cardanonical/schema.json#/definitions/ProposedProtocolParameters"
             }
           , "guardrails":
             { "oneOf":
-              [ { "$ref": "#/definitions/Null" }
+              [ { "$ref": "/cardanonical/schema.json#/definitions/Null" }
               , { "type": "object"
                 , "required": [ "hash" ]
                 , "additionalProperties": false
                 , "properties":
-                  { "hash": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
+                  { "hash": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
                   }
                 }
               ]
@@ -1260,10 +1260,10 @@
             , "enum": [ "hardForkInitiation" ]
             }
           , "ancestor":
-            { "$ref": "#/definitions/GovernanceProposalReference"
+            { "$ref": "/cardanonical/schema.json#/definitions/GovernanceProposalReference"
             }
           , "version":
-            { "$ref": "#/definitions/ProtocolVersion"
+            { "$ref": "/cardanonical/schema.json#/definitions/ProtocolVersion"
             }
           }
         }
@@ -1286,7 +1286,7 @@
             , "enum": [ "reserves", "treasury" ]
             }
           , "value":
-            { "$ref": "#/definitions/Value<AdaOnly>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
             }
           }
         }
@@ -1301,16 +1301,16 @@
             , "enum": [ "treasuryWithdrawals" ]
             }
           , "withdrawals":
-            { "$ref": "#/definitions/RewardTransfer"
+            { "$ref": "/cardanonical/schema.json#/definitions/RewardTransfer"
             }
           , "guardrails":
             { "oneOf":
-              [ { "$ref": "#/definitions/Null" }
+              [ { "$ref": "/cardanonical/schema.json#/definitions/Null" }
               , { "type": "object"
                 , "required": [ "hash" ]
                 , "additionalProperties": false
                 , "properties":
-                  { "hash": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
+                  { "hash": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
                   }
                 }
               ]
@@ -1328,7 +1328,7 @@
             , "enum": [ "constitutionalCommittee" ]
             }
           , "ancestor":
-            { "$ref": "#/definitions/GovernanceProposalReference"
+            { "$ref": "/cardanonical/schema.json#/definitions/GovernanceProposalReference"
             }
           , "members":
             { "type": "object"
@@ -1338,7 +1338,7 @@
               { "added":
                 { "type": "array"
                 , "items":
-                  { "$ref": "#/definitions/ConstitutionalCommitteeMemberSummary"
+                  { "$ref": "/cardanonical/schema.json#/definitions/ConstitutionalCommitteeMemberSummary"
                   }
                 }
               , "removed":
@@ -1348,15 +1348,15 @@
                   , "additionalProperties": false
                   , "required": [ "id", "from" ]
                   , "properties":
-                    { "id": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
-                    , "from": { "$ref": "#/definitions/CredentialOrigin" }
+                    { "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
+                    , "from": { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin" }
                     }
                   }
                 }
               }
             }
           , "quorum":
-            { "$ref": "#/definitions/Ratio"
+            { "$ref": "/cardanonical/schema.json#/definitions/Ratio"
             }
           }
         }
@@ -1371,22 +1371,22 @@
             , "enum": [ "constitution" ]
             }
           , "ancestor":
-            { "$ref": "#/definitions/GovernanceProposalReference"
+            { "$ref": "/cardanonical/schema.json#/definitions/GovernanceProposalReference"
             }
           , "guardrails":
             { "oneOf":
-              [ { "$ref": "#/definitions/Null" }
+              [ { "$ref": "/cardanonical/schema.json#/definitions/Null" }
               , { "type": "object"
                 , "additionalProperties": false
                 , "required": [ "hash" ]
                 , "properties":
-                  { "hash": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
+                  { "hash": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
                   }
                 }
               ]
             }
           , "metadata":
-            { "$ref": "#/definitions/Anchor"
+            { "$ref": "/cardanonical/schema.json#/definitions/Anchor"
             }
           }
         }
@@ -1401,7 +1401,7 @@
             , "enum": [ "noConfidence" ]
             }
           , "ancestor":
-            { "$ref": "#/definitions/GovernanceProposalReference"
+            { "$ref": "/cardanonical/schema.json#/definitions/GovernanceProposalReference"
             }
           }
         }
@@ -1427,16 +1427,16 @@
     , "required": [ "action" ]
     , "properties":
       { "deposit":
-        { "$ref": "#/definitions/Value<AdaOnly>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
         }
       , "returnAccount":
-        { "$ref": "#/definitions/RewardAccount"
+        { "$ref": "/cardanonical/schema.json#/definitions/RewardAccount"
         }
       , "metadata":
-        { "$ref": "#/definitions/Anchor"
+        { "$ref": "/cardanonical/schema.json#/definitions/Anchor"
         }
       , "action":
-        { "$ref": "#/definitions/GovernanceAction"
+        { "$ref": "/cardanonical/schema.json#/definitions/GovernanceAction"
         }
       }
     }
@@ -1453,12 +1453,12 @@
         , "required": [ "id" ]
         , "properties":
           { "id":
-            { "$ref": "#/definitions/TransactionId"
+            { "$ref": "/cardanonical/schema.json#/definitions/TransactionId"
             }
           }
         }
       , "index":
-        { "$ref": "#/definitions/UInt32"
+        { "$ref": "/cardanonical/schema.json#/definitions/UInt32"
         }
       }
     }
@@ -1471,17 +1471,17 @@
     , "required": [ "issuer", "vote" ]
     , "properties":
       { "issuer":
-        { "$ref": "#/definitions/GovernanceVoter"
+        { "$ref": "/cardanonical/schema.json#/definitions/GovernanceVoter"
         }
       , "metadata":
-        { "$ref": "#/definitions/Anchor"
+        { "$ref": "/cardanonical/schema.json#/definitions/Anchor"
         }
       , "vote":
         { "type": "string"
         , "enum": [ "yes", "no", "abstain" ]
         }
       , "proposal":
-        { "$ref": "#/definitions/GovernanceProposalReference"
+        { "$ref": "/cardanonical/schema.json#/definitions/GovernanceProposalReference"
         }
       }
     }
@@ -1498,10 +1498,10 @@
             , "enum": [ "genesisDelegate" ]
             }
           , "id":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           , "from":
-            { "$ref": "#/definitions/CredentialOrigin"
+            { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
             }
           }
         }
@@ -1515,10 +1515,10 @@
             , "enum": [ "constitutionalCommittee" ]
             }
           , "id":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           , "from":
-            { "$ref": "#/definitions/CredentialOrigin"
+            { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
             }
           }
         }
@@ -1532,10 +1532,10 @@
             , "enum": [ "delegateRepresentative" ]
             }
           , "id":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           , "from":
-            { "$ref": "#/definitions/CredentialOrigin"
+            { "$ref": "/cardanonical/schema.json#/definitions/CredentialOrigin"
             }
           }
         }
@@ -1549,7 +1549,7 @@
             , "enum": [ "stakePoolOperator" ]
             }
           , "id":
-            { "$ref": "#/definitions/StakePoolId"
+            { "$ref": "/cardanonical/schema.json#/definitions/StakePoolId"
             }
           }
         }
@@ -1578,11 +1578,11 @@
           , "additionalProperties": false
           , "required": [ "id" ]
           , "properties":
-            { "id": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
+            { "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
             }
           }
         , "delegate":
-          { "$ref": "#/definitions/GenesisDelegate"
+          { "$ref": "/cardanonical/schema.json#/definitions/GenesisDelegate"
           }
         }
       }
@@ -1621,7 +1621,7 @@
     , "additionalProperties": false
     , "required": [ "epoch" ]
     , "properties":
-      { "epoch": { "$ref": "#/definitions/Epoch" }
+      { "epoch": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
       }
     }
 
@@ -1631,8 +1631,8 @@
     , "additionalProperties": false
     , "required": [ "hash", "labels" ]
     , "properties":
-      { "hash": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
-      , "labels": { "$ref": "#/definitions/MetadataLabels" }
+      { "hash": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
+      , "labels": { "$ref": "/cardanonical/schema.json#/definitions/MetadataLabels" }
       }
     }
 
@@ -1651,7 +1651,7 @@
           , "pattern": "^[0-9a-f]*$"
           }
         , "json":
-          { "$ref": "#/definitions/Metadatum"
+          { "$ref": "/cardanonical/schema.json#/definitions/Metadatum"
           }
         }
       }
@@ -1664,8 +1664,8 @@
         , "oneOf":
           [ { "title": "IntegerNoSchema", "type": "integer" }
           , { "title": "StringNoSchema", "type": "string" }
-          , { "title": "Array<NoSchema>", "type": "array", "items": { "$ref": "#/definitions/Metadatum/anyOf/0" } }
-          , { "title": "Object<NoSchema>", "type": "object", "additionalProperties": { "$ref": "#/definitions/Metadatum/anyOf/0" } }
+          , { "title": "Array<NoSchema>", "type": "array", "items": { "$ref": "/cardanonical/schema.json#/definitions/Metadatum/anyOf/0" } }
+          , { "title": "Object<NoSchema>", "type": "object", "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/Metadatum/anyOf/0" } }
           ]
         }
       , { "title": "Metadatum<DetailedSchema>"
@@ -1709,7 +1709,7 @@
             , "properties":
               { "list":
                 { "type": "array"
-                , "items": { "$ref": "#/definitions/Metadatum/anyOf/1" }
+                , "items": { "$ref": "/cardanonical/schema.json#/definitions/Metadatum/anyOf/1" }
                 }
               }
             }
@@ -1720,7 +1720,7 @@
             , "properties":
               { "map":
                 { "type": "array"
-                , "items": { "$ref": "#/definitions/MetadatumMap" }
+                , "items": { "$ref": "/cardanonical/schema.json#/definitions/MetadatumMap" }
                 }
               }
             }
@@ -1735,8 +1735,8 @@
     , "additionalProperties": false
     , "required": ["k", "v"]
     , "properties":
-      { "k": { "$ref": "#/definitions/Metadatum/anyOf/1" }
-      , "v": { "$ref": "#/definitions/Metadatum/anyOf/1" }
+      { "k": { "$ref": "/cardanonical/schema.json#/definitions/Metadatum/anyOf/1" }
+      , "v": { "$ref": "/cardanonical/schema.json#/definitions/Metadatum/anyOf/1" }
       }
     }
 
@@ -1765,7 +1765,7 @@
         , "enum": ["neutral"]
         , "title": "Neutral"
         }
-      , { "$ref": "#/definitions/Digest<Blake2b, 256>" }
+      , { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
       ]
     }
 
@@ -1778,7 +1778,7 @@
     , "additionalProperties": false
     , "required": [ "bytes" ]
     , "properties":
-      { "bytes": { "$ref": "#/definitions/UInt64" }
+      { "bytes": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
       }
     }
 
@@ -1789,15 +1789,15 @@
     , "additionalProperties": false
     , "required": [ "count", "kes" ]
     , "properties":
-      { "count": { "$ref": "#/definitions/UInt64" }
-      , "sigma": { "$ref": "#/definitions/Signature" }
+      { "count": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "sigma": { "$ref": "/cardanonical/schema.json#/definitions/Signature" }
       , "kes":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "period", "verificationKey" ]
         , "properties":
-          { "period": { "$ref": "#/definitions/UInt64" }
-          , "verificationKey": { "$ref": "#/definitions/KesVerificationKey" }
+          { "period": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+          , "verificationKey": { "$ref": "/cardanonical/schema.json#/definitions/KesVerificationKey" }
           }
         }
       }
@@ -1812,7 +1812,7 @@
 
   , "PolicyId":
     { "title": "PolicyId"
-    , "$ref": "#/definitions/Digest<Blake2b, 224>"
+    , "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
     }
 
   , "StakePool":
@@ -1831,35 +1831,35 @@
       ]
     , "properties":
       { "id":
-        { "$ref": "#/definitions/StakePoolId"
+        { "$ref": "/cardanonical/schema.json#/definitions/StakePoolId"
         }
       , "vrfVerificationKeyHash":
-        { "$ref": "#/definitions/Digest<Blake2b, 256>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>"
         }
       , "owners":
         { "type": "array"
         , "items":
-          { "$ref": "#/definitions/Digest<Blake2b, 224>"
+          { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
           }
         }
       , "cost":
-        { "$ref": "#/definitions/Value<AdaOnly>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
         }
       , "margin":
-        { "$ref": "#/definitions/Ratio"
+        { "$ref": "/cardanonical/schema.json#/definitions/Ratio"
         }
       , "pledge":
-        { "$ref": "#/definitions/Value<AdaOnly>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
         }
       , "rewardAccount":
-        { "$ref": "#/definitions/RewardAccount"
+        { "$ref": "/cardanonical/schema.json#/definitions/RewardAccount"
         }
       , "metadata":
-        { "$ref": "#/definitions/Anchor"
+        { "$ref": "/cardanonical/schema.json#/definitions/Anchor"
         }
       , "relays":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Relay" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Relay" }
         }
       }
     }
@@ -1887,23 +1887,23 @@
       , "protocolParametersUpdate"
       ]
     , "properties":
-      { "noConfidence": { "$ref": "#/definitions/Ratio" }
+      { "noConfidence": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
       , "constitutionalCommittee":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "default", "stateOfNoConfidence" ]
         , "properties":
-          { "default": { "$ref": "#/definitions/Ratio" }
-          , "stateOfNoConfidence": { "$ref": "#/definitions/Ratio" }
+          { "default": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+          , "stateOfNoConfidence": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
           }
         }
-      , "hardForkInitiation": { "$ref": "#/definitions/Ratio" }
+      , "hardForkInitiation": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
       , "protocolParametersUpdate":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "security" ]
         , "properties":
-          { "security": { "$ref": "#/definitions/Ratio" }
+          { "security": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
           }
         }
       }
@@ -1914,50 +1914,50 @@
     , "type": "object"
     , "additionalProperties": false
     , "properties":
-      { "minFeeCoefficient": { "$ref": "#/definitions/UInt64" }
-      , "minFeeConstant": { "$ref": "#/definitions/Value<AdaOnly>" }
+      { "minFeeCoefficient": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "minFeeConstant": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
       , "minFeeReferenceScripts":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "range", "base", "multiplier" ]
         , "properties":
-          { "range": { "$ref": "#/definitions/UInt32" }
+          { "range": { "$ref": "/cardanonical/schema.json#/definitions/UInt32" }
           , "base": { "type": "number" }
           , "multiplier": { "type": "number" }
           }
         }
-      , "minUtxoDepositCoefficient": { "$ref": "#/definitions/UInt64" }
-      , "minUtxoDepositConstant": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "maxBlockBodySize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxBlockHeaderSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxTransactionSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxReferenceScriptsSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxValueSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "extraEntropy": { "$ref": "#/definitions/Nonce" }
-      , "stakeCredentialDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "stakePoolDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "stakePoolRetirementEpochBound": { "$ref": "#/definitions/UInt64" }
-      , "stakePoolPledgeInfluence": { "$ref": "#/definitions/Ratio" }
-      , "minStakePoolCost": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "desiredNumberOfStakePools": { "$ref": "#/definitions/UInt64" }
-      , "federatedBlockProductionRatio": { "$ref": "#/definitions/Ratio" }
-      , "monetaryExpansion": { "$ref": "#/definitions/Ratio" }
-      , "treasuryExpansion": { "$ref": "#/definitions/Ratio" }
-      , "collateralPercentage": { "$ref": "#/definitions/UInt64" }
-      , "maxCollateralInputs": { "$ref": "#/definitions/UInt64" }
-      , "plutusCostModels": { "$ref": "#/definitions/CostModels" }
-      , "scriptExecutionPrices": { "$ref": "#/definitions/ScriptExecutionPrices" }
-      , "maxExecutionUnitsPerTransaction": { "$ref": "#/definitions/ExecutionUnits" }
-      , "maxExecutionUnitsPerBlock": { "$ref": "#/definitions/ExecutionUnits" }
-      , "stakePoolVotingThresholds": { "$ref": "#/definitions/StakePoolVotingThresholds" }
-      , "constitutionalCommitteeMinSize": { "$ref": "#/definitions/UInt16" }
-      , "constitutionalCommitteeMaxTermLength": { "$ref": "#/definitions/UInt64" }
-      , "governanceActionLifetime": { "$ref": "#/definitions/Epoch" }
-      , "governanceActionDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "delegateRepresentativeVotingThresholds": { "$ref": "#/definitions/DelegateRepresentativeVotingThresholds" }
-      , "delegateRepresentativeDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "delegateRepresentativeMaxIdleTime": { "$ref": "#/definitions/Epoch" }
-      , "version": { "$ref": "#/definitions/ProtocolVersion" }
+      , "minUtxoDepositCoefficient": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "minUtxoDepositConstant": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "maxBlockBodySize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxBlockHeaderSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxTransactionSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxReferenceScriptsSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxValueSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "extraEntropy": { "$ref": "/cardanonical/schema.json#/definitions/Nonce" }
+      , "stakeCredentialDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "stakePoolDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "stakePoolRetirementEpochBound": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "stakePoolPledgeInfluence": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "minStakePoolCost": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "desiredNumberOfStakePools": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "federatedBlockProductionRatio": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "monetaryExpansion": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "treasuryExpansion": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "collateralPercentage": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "maxCollateralInputs": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "plutusCostModels": { "$ref": "/cardanonical/schema.json#/definitions/CostModels" }
+      , "scriptExecutionPrices": { "$ref": "/cardanonical/schema.json#/definitions/ScriptExecutionPrices" }
+      , "maxExecutionUnitsPerTransaction": { "$ref": "/cardanonical/schema.json#/definitions/ExecutionUnits" }
+      , "maxExecutionUnitsPerBlock": { "$ref": "/cardanonical/schema.json#/definitions/ExecutionUnits" }
+      , "stakePoolVotingThresholds": { "$ref": "/cardanonical/schema.json#/definitions/StakePoolVotingThresholds" }
+      , "constitutionalCommitteeMinSize": { "$ref": "/cardanonical/schema.json#/definitions/UInt16" }
+      , "constitutionalCommitteeMaxTermLength": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "governanceActionLifetime": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
+      , "governanceActionDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "delegateRepresentativeVotingThresholds": { "$ref": "/cardanonical/schema.json#/definitions/DelegateRepresentativeVotingThresholds" }
+      , "delegateRepresentativeDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "delegateRepresentativeMaxIdleTime": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
+      , "version": { "$ref": "/cardanonical/schema.json#/definitions/ProtocolVersion" }
       }
     }
 
@@ -1983,15 +1983,15 @@
       , "version"
       ]
     , "properties":
-      { "minFeeCoefficient": { "$ref": "#/definitions/UInt64" }
-      , "minFeeConstant": { "$ref": "#/definitions/Value<AdaOnly>" }
+      { "minFeeCoefficient": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "minFeeConstant": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
       , "minFeeReferenceScripts":
         { "type": "object"
         , "additionalProperties": false
         , "required": [ "range", "base", "multiplier" ]
         , "properties":
           { "range":
-            { "$ref": "#/definitions/UInt32"
+            { "$ref": "/cardanonical/schema.json#/definitions/UInt32"
             }
           , "base":
             { "type": "number"
@@ -2003,38 +2003,38 @@
             }
           }
         }
-      , "minUtxoDepositCoefficient": { "$ref": "#/definitions/UInt64" }
-      , "minUtxoDepositConstant": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "maxBlockBodySize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxBlockHeaderSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxTransactionSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "maxValueSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "extraEntropy": { "$ref": "#/definitions/Nonce" }
-      , "stakeCredentialDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "stakePoolDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "stakePoolRetirementEpochBound": { "$ref": "#/definitions/UInt64" }
-      , "stakePoolPledgeInfluence": { "$ref": "#/definitions/Ratio" }
-      , "minStakePoolCost": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "desiredNumberOfStakePools": { "$ref": "#/definitions/UInt64" }
-      , "federatedBlockProductionRatio": { "$ref": "#/definitions/Ratio" }
-      , "monetaryExpansion": { "$ref": "#/definitions/Ratio" }
-      , "treasuryExpansion": { "$ref": "#/definitions/Ratio" }
-      , "collateralPercentage": { "$ref": "#/definitions/UInt64" }
-      , "maxCollateralInputs": { "$ref": "#/definitions/UInt64" }
-      , "plutusCostModels": { "$ref": "#/definitions/CostModels" }
-      , "scriptExecutionPrices": { "$ref": "#/definitions/ScriptExecutionPrices" }
-      , "maxExecutionUnitsPerTransaction": { "$ref": "#/definitions/ExecutionUnits" }
-      , "maxExecutionUnitsPerBlock": { "$ref": "#/definitions/ExecutionUnits" }
-      , "maxReferenceScriptsSize": { "$ref": "#/definitions/NumberOfBytes" }
-      , "stakePoolVotingThresholds": { "$ref": "#/definitions/StakePoolVotingThresholds" }
-      , "constitutionalCommitteeMinSize": { "$ref": "#/definitions/UInt16" }
-      , "constitutionalCommitteeMaxTermLength": { "$ref": "#/definitions/UInt64" }
-      , "governanceActionLifetime": { "$ref": "#/definitions/Epoch" }
-      , "governanceActionDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "delegateRepresentativeVotingThresholds": { "$ref": "#/definitions/DelegateRepresentativeVotingThresholds" }
-      , "delegateRepresentativeDeposit": { "$ref": "#/definitions/Value<AdaOnly>" }
-      , "delegateRepresentativeMaxIdleTime": { "$ref": "#/definitions/Epoch" }
-      , "version": { "$ref": "#/definitions/ProtocolVersion" }
+      , "minUtxoDepositCoefficient": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "minUtxoDepositConstant": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "maxBlockBodySize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxBlockHeaderSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxTransactionSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "maxValueSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "extraEntropy": { "$ref": "/cardanonical/schema.json#/definitions/Nonce" }
+      , "stakeCredentialDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "stakePoolDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "stakePoolRetirementEpochBound": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "stakePoolPledgeInfluence": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "minStakePoolCost": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "desiredNumberOfStakePools": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "federatedBlockProductionRatio": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "monetaryExpansion": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "treasuryExpansion": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "collateralPercentage": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "maxCollateralInputs": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "plutusCostModels": { "$ref": "/cardanonical/schema.json#/definitions/CostModels" }
+      , "scriptExecutionPrices": { "$ref": "/cardanonical/schema.json#/definitions/ScriptExecutionPrices" }
+      , "maxExecutionUnitsPerTransaction": { "$ref": "/cardanonical/schema.json#/definitions/ExecutionUnits" }
+      , "maxExecutionUnitsPerBlock": { "$ref": "/cardanonical/schema.json#/definitions/ExecutionUnits" }
+      , "maxReferenceScriptsSize": { "$ref": "/cardanonical/schema.json#/definitions/NumberOfBytes" }
+      , "stakePoolVotingThresholds": { "$ref": "/cardanonical/schema.json#/definitions/StakePoolVotingThresholds" }
+      , "constitutionalCommitteeMinSize": { "$ref": "/cardanonical/schema.json#/definitions/UInt16" }
+      , "constitutionalCommitteeMaxTermLength": { "$ref": "/cardanonical/schema.json#/definitions/UInt64" }
+      , "governanceActionLifetime": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
+      , "governanceActionDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "delegateRepresentativeVotingThresholds": { "$ref": "/cardanonical/schema.json#/definitions/DelegateRepresentativeVotingThresholds" }
+      , "delegateRepresentativeDeposit": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+      , "delegateRepresentativeMaxIdleTime": { "$ref": "/cardanonical/schema.json#/definitions/Epoch" }
+      , "version": { "$ref": "/cardanonical/schema.json#/definitions/ProtocolVersion" }
       }
     }
 
@@ -2044,9 +2044,9 @@
     , "additionalProperties": false
     , "required": [ "major", "minor" ]
     , "properties":
-      { "major": { "$ref": "#/definitions/UInt32" }
-      , "minor": { "$ref": "#/definitions/UInt32" }
-      , "patch": { "$ref": "#/definitions/UInt32" }
+      { "major": { "$ref": "/cardanonical/schema.json#/definitions/UInt32" }
+      , "minor": { "$ref": "/cardanonical/schema.json#/definitions/UInt32" }
+      , "patch": { "$ref": "/cardanonical/schema.json#/definitions/UInt32" }
       }
     }
 
@@ -2079,9 +2079,9 @@
     , "additionalProperties": false
     , "required": [ "redeemer", "executionUnits", "validator" ]
     , "properties":
-      { "redeemer": { "$ref": "#/definitions/RedeemerData" }
-      , "executionUnits": { "$ref": "#/definitions/ExecutionUnits" }
-      , "validator": { "$ref": "#/definitions/RedeemerPointer" }
+      { "redeemer": { "$ref": "/cardanonical/schema.json#/definitions/RedeemerData" }
+      , "executionUnits": { "$ref": "/cardanonical/schema.json#/definitions/ExecutionUnits" }
+      , "validator": { "$ref": "/cardanonical/schema.json#/definitions/RedeemerPointer" }
       }
     }
 
@@ -2103,7 +2103,7 @@
         , "enum": [ "spend", "mint", "publish", "withdraw", "vote", "propose" ]
         }
       , "index":
-        { "$ref": "#/definitions/UInt64"
+        { "$ref": "/cardanonical/schema.json#/definitions/UInt64"
         }
       }
     }
@@ -2182,7 +2182,7 @@
   , "RewardTransfer":
     { "title": "RewardTransfer"
     , "type": "object"
-    , "additionalProperties": { "$ref": "#/definitions/Value<Delta>" }
+    , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/Value<Delta>" }
     , "propertyNames": { "pattern": "[0-9a-f]{56}$" }
     , "examples":
       [ { "6d06fe0a5a8cb6d2bcc352581dea626bb5b2f66edf85678b2f2fa7b5": { "ada": { "lovelace": 123456789 } }
@@ -2212,7 +2212,7 @@
             , "enum": [ "native" ]
             }
           , "json":
-            { "$ref": "#/definitions/Script<Native>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Script<Native>"
             }
           , "cbor":
             { "type": "string"
@@ -2269,7 +2269,7 @@
             , "enum": [ "signature" ]
             }
           , "from":
-            { "$ref": "#/definitions/Digest<Blake2b, 224>"
+            { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>"
             }
           }
         }
@@ -2284,7 +2284,7 @@
             }
           , "from":
             { "type": "array"
-            , "items": { "$ref": "#/definitions/Script<Native>" }
+            , "items": { "$ref": "/cardanonical/schema.json#/definitions/Script<Native>" }
             }
           }
         }
@@ -2300,7 +2300,7 @@
             }
           , "from":
             { "type": "array"
-            , "items": { "$ref": "#/definitions/Script<Native>" }
+            , "items": { "$ref": "/cardanonical/schema.json#/definitions/Script<Native>" }
             }
           }
         }
@@ -2318,7 +2318,7 @@
             }
           , "from":
             { "type": "array"
-            , "items": { "$ref": "#/definitions/Script<Native>" }
+            , "items": { "$ref": "/cardanonical/schema.json#/definitions/Script<Native>" }
             }
           }
         }
@@ -2332,7 +2332,7 @@
             , "enum": [ "before" ]
             }
           , "slot":
-            { "$ref": "#/definitions/Slot"
+            { "$ref": "/cardanonical/schema.json#/definitions/Slot"
             }
           }
         }
@@ -2346,7 +2346,7 @@
             , "enum": [ "after" ]
             }
           , "slot":
-            { "$ref": "#/definitions/Slot"
+            { "$ref": "/cardanonical/schema.json#/definitions/Slot"
             }
           }
         }
@@ -2359,8 +2359,8 @@
     , "additionalProperties": false
     , "required": [ "memory", "cpu" ]
     , "properties":
-      { "memory": { "$ref": "#/definitions/Ratio" }
-      , "cpu": { "$ref": "#/definitions/Ratio" }
+      { "memory": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
+      , "cpu": { "$ref": "/cardanonical/schema.json#/definitions/Ratio" }
       }
     }
 
@@ -2376,7 +2376,7 @@
             { "type": "string"
             , "enum": [ "spend" ]
             }
-          , "outputReference": { "$ref": "#/definitions/TransactionOutputReference" }
+          , "outputReference": { "$ref": "/cardanonical/schema.json#/definitions/TransactionOutputReference" }
           }
         }
       , { "title": "ScriptPurpose<Mint>"
@@ -2388,7 +2388,7 @@
             { "type": "string"
             , "enum": [ "mint" ]
             }
-          , "policy": { "$ref": "#/definitions/PolicyId" }
+          , "policy": { "$ref": "/cardanonical/schema.json#/definitions/PolicyId" }
           }
         }
       , { "title": "ScriptPurpose<Publish>"
@@ -2400,7 +2400,7 @@
             { "type": "string"
             , "enum": [ "publish" ]
             }
-          , "certificate": { "$ref": "#/definitions/Certificate" }
+          , "certificate": { "$ref": "/cardanonical/schema.json#/definitions/Certificate" }
           }
         }
       , { "title": "ScriptPurpose<Withdraw>"
@@ -2412,7 +2412,7 @@
             { "type": "string"
             , "enum": [ "withdraw" ]
             }
-          , "rewardAccount": { "$ref": "#/definitions/RewardAccount" }
+          , "rewardAccount": { "$ref": "/cardanonical/schema.json#/definitions/RewardAccount" }
           }
         }
       , { "title": "ScriptPurpose<Propose>"
@@ -2425,7 +2425,7 @@
             , "enum": [ "propose" ]
             }
           , "proposal":
-            { "$ref": "#/definitions/GovernanceProposal"
+            { "$ref": "/cardanonical/schema.json#/definitions/GovernanceProposal"
             }
           }
         }
@@ -2439,7 +2439,7 @@
             , "enum": [ "vote" ]
             }
           , "issuer":
-            { "$ref": "#/definitions/GovernanceVoter"
+            { "$ref": "/cardanonical/schema.json#/definitions/GovernanceVoter"
             }
           }
         }
@@ -2462,10 +2462,10 @@
     , "additionalProperties": false
     , "required": [ "signature", "key" ]
     , "properties":
-      { "key": { "$ref": "#/definitions/VerificationKey" }
-      , "signature": { "$ref": "#/definitions/Signature" }
-      , "chainCode": { "$ref": "#/definitions/ChainCode" }
-      , "addressAttributes": { "$ref": "#/definitions/AddressAttributes" }
+      { "key": { "$ref": "/cardanonical/schema.json#/definitions/VerificationKey" }
+      , "signature": { "$ref": "/cardanonical/schema.json#/definitions/Signature" }
+      , "chainCode": { "$ref": "/cardanonical/schema.json#/definitions/ChainCode" }
+      , "addressAttributes": { "$ref": "/cardanonical/schema.json#/definitions/AddressAttributes" }
       }
     , "examples":
       [ { "signature": "deeb8f82f2af5836ebbc1b450b6dbf0b03c93afe5696f10d49e8a8304ebfac01deeb8f82f2af5836ebbc1b4ffffffff"
@@ -2507,7 +2507,7 @@
     , "required": [ "appName", "number" ]
     , "properties":
       { "appName": { "type": "string" }
-      , "number": { "$ref": "#/definitions/UInt32" }
+      , "number": { "$ref": "/cardanonical/schema.json#/definitions/UInt32" }
       }
     }
 
@@ -2528,9 +2528,9 @@
     , "additionalProperties": false
     , "required": [ "slot", "id", "height" ]
     , "properties":
-      { "slot": { "$ref": "#/definitions/Slot" }
-      , "id": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
-      , "height": { "$ref": "#/definitions/BlockHeight" }
+      { "slot": { "$ref": "/cardanonical/schema.json#/definitions/Slot" }
+      , "id": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
+      , "height": { "$ref": "/cardanonical/schema.json#/definitions/BlockHeight" }
       }
     }
 
@@ -2541,98 +2541,98 @@
     , "required": [ "id", "spends", "inputs", "outputs", "signatories" ]
     , "properties":
       { "id":
-        { "$ref": "#/definitions/Digest<Blake2b, 256>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>"
         }
       , "spends":
-        { "$ref": "#/definitions/InputSource"
+        { "$ref": "/cardanonical/schema.json#/definitions/InputSource"
         }
       , "inputs":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/TransactionOutputReference" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/TransactionOutputReference" }
         }
       , "references":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/TransactionOutputReference" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/TransactionOutputReference" }
         }
       , "collaterals":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/TransactionOutputReference" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/TransactionOutputReference" }
         }
       , "totalCollateral":
-        { "$ref": "#/definitions/Value<AdaOnly>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
         }
       , "collateralReturn":
-        { "$ref": "#/definitions/TransactionOutput"
+        { "$ref": "/cardanonical/schema.json#/definitions/TransactionOutput"
         }
       , "outputs":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/TransactionOutput" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/TransactionOutput" }
         }
       , "certificates":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Certificate" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Certificate" }
         }
       , "withdrawals":
-        { "$ref": "#/definitions/Withdrawals"
+        { "$ref": "/cardanonical/schema.json#/definitions/Withdrawals"
         }
       , "fee":
-        { "$ref": "#/definitions/Value<AdaOnly>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>"
         }
       , "validityInterval":
-        { "$ref": "#/definitions/ValidityInterval"
+        { "$ref": "/cardanonical/schema.json#/definitions/ValidityInterval"
         }
       , "mint":
-        { "$ref": "#/definitions/Assets"
+        { "$ref": "/cardanonical/schema.json#/definitions/Assets"
         }
       , "network":
-        { "$ref": "#/definitions/Network"
+        { "$ref": "/cardanonical/schema.json#/definitions/Network"
         }
       , "scriptIntegrityHash":
-        { "$ref": "#/definitions/Digest<Blake2b, 256>"
+        { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>"
         }
       , "requiredExtraSignatories":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
         }
       , "requiredExtraScripts":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Digest<Blake2b, 224>" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 224>" }
         }
       , "proposals":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/GovernanceProposal" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/GovernanceProposal" }
         }
       , "votes":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/GovernanceVote" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/GovernanceVote" }
         }
       , "metadata":
-        { "$ref": "#/definitions/Metadata"
+        { "$ref": "/cardanonical/schema.json#/definitions/Metadata"
         }
       , "signatories":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Signatory" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Signatory" }
         }
       , "scripts":
         { "type": "object"
         , "propertyNames": { "contentEncoding": "base16", "pattern": "^[0-9a-f]+$" }
-        , "additionalProperties": { "$ref": "#/definitions/Script" }
+        , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/Script" }
         }
       , "datums":
         { "type": "object"
         , "propertyNames": { "contentEncoding": "base16", "pattern": "^[0-9a-f]+$" }
-        , "additionalProperties": { "$ref": "#/definitions/Datum" }
+        , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/Datum" }
         }
       , "redeemers":
         { "type": "array"
-        , "items": { "$ref": "#/definitions/Redeemer" }
+        , "items": { "$ref": "/cardanonical/schema.json#/definitions/Redeemer" }
         }
       , "treasury":
         { "type": "object"
         , "additionalProperties": false
         , "properties":
-          { "value": { "$ref": "#/definitions/Value<AdaOnly>" }
-          , "donation": { "$ref": "#/definitions/Value<AdaOnly>" }
+          { "value": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
+          , "donation": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
           }
         }
       , "cbor":
@@ -2668,11 +2668,11 @@
     , "additionalProperties": false
     , "required": [ "address", "value" ]
     , "properties":
-      { "address": { "$ref": "#/definitions/Address" }
-      , "value": { "$ref": "#/definitions/Value" }
-      , "datumHash": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
-      , "datum": { "$ref": "#/definitions/Datum" }
-      , "script": { "$ref": "#/definitions/Script" }
+      { "address": { "$ref": "/cardanonical/schema.json#/definitions/Address" }
+      , "value": { "$ref": "/cardanonical/schema.json#/definitions/Value" }
+      , "datumHash": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
+      , "datum": { "$ref": "/cardanonical/schema.json#/definitions/Datum" }
+      , "script": { "$ref": "/cardanonical/schema.json#/definitions/Script" }
       }
     }
 
@@ -2688,12 +2688,12 @@
         , "required": [ "id" ]
         , "properties":
           { "id":
-            { "$ref": "#/definitions/TransactionId"
+            { "$ref": "/cardanonical/schema.json#/definitions/TransactionId"
             }
           }
         }
       , "index":
-        { "$ref": "#/definitions/UInt64"
+        { "$ref": "/cardanonical/schema.json#/definitions/UInt64"
         }
       }
     }
@@ -2746,15 +2746,15 @@
           , "additionalProperties": false
           , "required": [ "id" ]
           , "properties":
-            { "id": { "$ref": "#/definitions/TransactionId" }
+            { "id": { "$ref": "/cardanonical/schema.json#/definitions/TransactionId" }
             }
           }
-        , "index": { "$ref": "#/definitions/UInt32" }
-        , "address": { "$ref": "#/definitions/Address" }
-        , "value": { "$ref": "#/definitions/Value" }
-        , "datumHash": { "$ref": "#/definitions/Digest<Blake2b, 256>" }
-        , "datum": { "$ref": "#/definitions/Datum" }
-        , "script": { "$ref": "#/definitions/Script" }
+        , "index": { "$ref": "/cardanonical/schema.json#/definitions/UInt32" }
+        , "address": { "$ref": "/cardanonical/schema.json#/definitions/Address" }
+        , "value": { "$ref": "/cardanonical/schema.json#/definitions/Value" }
+        , "datumHash": { "$ref": "/cardanonical/schema.json#/definitions/Digest<Blake2b, 256>" }
+        , "datum": { "$ref": "/cardanonical/schema.json#/definitions/Datum" }
+        , "script": { "$ref": "/cardanonical/schema.json#/definitions/Script" }
         }
       }
     }
@@ -2764,8 +2764,8 @@
     , "type": "object"
     , "additionalProperties": false
     , "properties":
-      { "invalidBefore": { "$ref": "#/definitions/Slot" }
-      , "invalidAfter": { "$ref": "#/definitions/Slot" }
+      { "invalidBefore": { "$ref": "/cardanonical/schema.json#/definitions/Slot" }
+      , "invalidAfter": { "$ref": "/cardanonical/schema.json#/definitions/Slot" }
       }
     }
 
@@ -2776,7 +2776,7 @@
     , "additionalProperties":
       { "type": "object"
       , "propertyNames": { "pattern": "^[0-9a-f]{0,64}$" }
-      , "additionalProperties": { "$ref": "#/definitions/AssetQuantity" }
+      , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/AssetQuantity" }
       }
     , "required": [ "ada" ]
     , "properties":
@@ -2860,7 +2860,7 @@
   , "Withdrawals":
     { "title": "Withdrawals"
     , "type": "object"
-    , "additionalProperties": { "$ref": "#/definitions/Value<AdaOnly>" }
+    , "additionalProperties": { "$ref": "/cardanonical/schema.json#/definitions/Value<AdaOnly>" }
     , "propertyNames": { "pattern": "^stake(_test)?1[0-9a-z]+$" }
     }
   }
